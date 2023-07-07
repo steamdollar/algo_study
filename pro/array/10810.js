@@ -25,9 +25,7 @@ M번 공을 넣은 이후에 각 바구니에 어떤 공이 들어 있는지
 
 */
 
-// let input = require("fs").readFileSync("/dev/stdin").toString().split("\n")
-
-const input = ["5 4", "1 2 3", "3 4 4", "1 4 1", "2 2 2"]
+let input = require("fs").readFileSync("/dev/stdin").toString().split("\n")
 
 const [N, M] = input[0].split(" ").map(v => Number(v))
 
