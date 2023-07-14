@@ -1,7 +1,5 @@
 const input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n")
 
-
-
 // 전체 학점 수
 let creditCount = 0
 
