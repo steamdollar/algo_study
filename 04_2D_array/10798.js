@@ -1,10 +1,4 @@
-// let input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n")
-
-let input =`AABCDD
-afzz
-09121
-a8EWg6
-P5h3kx`.split("\n")
+let input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n")
 
 let longest = 0
 
