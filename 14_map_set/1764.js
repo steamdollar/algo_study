@@ -33,4 +33,3 @@ for(let i =0; i < interArr.length; i++) {
 console.log(ans)
 
 // 배열과 반복문을 많이 사용하는데도 잘 되네..
-// 

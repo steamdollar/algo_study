@@ -10,7 +10,7 @@ console.log(emptySet)
 // Set(0) {}
 // 인수를 주지 않으면 빈 set이 만들어진다.
 
-// 배열은 인자로 주면 배열에 담긴 값으로 set이 만들어진다.
+// 배열을 인자로 주면 배열에 담긴 값으로 set이 만들어진다.
 const numSet = new Set([1,2,3])
 console.log(numSet)
 // Set(3) { 1, 2, 3 }
