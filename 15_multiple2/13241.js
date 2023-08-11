@@ -1,5 +1,5 @@
-//let [a, b] = require("fs").readFileSync("/dev/stdin").toString().trim()
-let[a,b] =`121 199`.split(" ").map(v => +v).sort((a,b) => a-b)
+let [a, b] = require("fs").readFileSync("/dev/stdin").toString().trim()
+.split(" ").map(v => +v).sort((a,b) => a-b)
 
 let gcd = 1
 
