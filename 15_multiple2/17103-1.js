@@ -8,7 +8,7 @@ let input=`5
 
 input.shift()
 
-// 배열에서 가장 큰 요소를 찾는 함수가 있다.
+// 배열에서 가장 큰 요소를 찾는 함수가 Math 내장객체에 있다.
 let max = Math.max(...input)
 
 // sieve를 사용할거라면 
