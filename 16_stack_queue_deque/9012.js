@@ -1,14 +1,5 @@
-//let input = require("fs").readFileSync("/dev/stdin").toString().trim()
-let input =`6
-(())())
-(((()())()
-(()())((()))
-((()()(()))(((())))()
-()()()()(()()())()
-(()((())()(
-((
-))
-())(()`.split("\n")
+let input = require("fs").readFileSync("/dev/stdin").toString().trim()
+.split("\n")
 
 input.shift()
 
@@ -19,7 +10,6 @@ input.shift()
 
 let ansArr = []
 
-// (())())
 for(let i = 0; i < input.length; i++) {
     let vsArr = []
     let strs = input[i].split("")
