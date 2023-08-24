@@ -113,9 +113,9 @@ let queue = new Queue
 let ans = ""
 
 for(let i = 1; i < input.length; i++) {
-    console.log(queue)
-    console.log("============")
-    console.log(input[i])
+    // console.log(queue)
+    // console.log("============")
+    // console.log(input[i])
 
     
     let cmd = input[i].split(" ")
