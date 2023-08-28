@@ -1,15 +1,5 @@
-// let input = require("fs").readFileSync("/dev/stdin").toString().trim()
-let input= `10
-1
-3
-5
-4
-0
-0
-7
-0
-0
-6`.split("\n").map(v => +v)
+let input = require("fs").readFileSync("/dev/stdin").toString().trim()
+.split("\n").map(v => +v)
 
 input.shift()
 

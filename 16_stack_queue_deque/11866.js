@@ -1,11 +1,5 @@
-// let input = require("fs").readFileSync("/dev/stdin").toString().trim()
-let input = `7 3`.split(" ").map(v => +v)
-
-// 원형큐 구현하는 문제인가?
-// 큐와 다른 점은 head의 다음이 tail이라는거?
-
-// 원형큐 안쓰는게 나을 것 같다.
-// 그냥 중간에 하나를 빼면, 그 전 노드의 next값을 변경해주면 될 것 같음.
+let input = require("fs").readFileSync("/dev/stdin").toString().trim()
+.split(" ").map(v => +v)
 
 class Node {
     constructor(item) {
@@ -15,14 +9,10 @@ class Node {
 }
 
 class Queue {
-    constructor(max, k) {
+    constructor() {
         this.head = null
         this.tail = null
         this.size = 0
-        this.cap = max
-        
-        this.interval = k
-        this.point = k
     }
     
     push(item) {
@@ -38,14 +28,8 @@ class Queue {
         this.size++
     }
     
-    // 중간에 있는 node를 제거할 것이므로 일반적인 큐와는 코드가 달라야함.
-    // 제거할 node를 어떻게 찾지..?
-    pop(n) {
-        // head 확인 > 아니면 다음 노드 확인...
-        // > 원하는 노드가 나올 때까지 반복
-        // 별로 효율이 좋지 않을 것 같은데
-        // head를 바꿔주는 식으로 할까?
-        // 이것도 별 차이 없을 것 같기는 한데.. 
+
+    pop() {
         
         const temp = this.head.item
         this.head = this.head.next
@@ -55,18 +39,14 @@ class Queue {
         }
         
         this.size--
-        this.pointer(this.interval)
         
         return temp
     }
     
-    pointer() {
-        this.point = this.point + this.interval
-        if(this.point > this.cap) {
-            this.point = this.point-7
-        }
-    }
+
 }
+
+let ans = []
 
 let queue = new Queue(input[0], input[1])
 
@@ -74,6 +54,23 @@ for(let i = 1; i <= input[0]; i++) {
     queue.push(i)
 }
 
+let turn = 1
 while(queue.size > 0) {
+    // 일단 head를 뺀다.
+    let temp = queue.pop()
     
+    // 아직 k만큼 뒤로 가지 못했으면 그냥 다시 제일 뒤로 돌려줌
+    if(turn < input[1]) {
+        queue.push(temp)
+        turn++
+    } else {
+        ans.push(temp)
+        turn = 1
+    }
 }
+
+console.log(`<${ans.join(", ")}>`)
+
+// 원형 큐를 구현해야 하나 하고 혼자 너무 복잡하게 생각했다.
+// 큐의 개념만 조금 응용하면 되는 문제였다.
+// 그냥 빼서 확인하고 아니면 뒤에 넣어주면 되잖아..
