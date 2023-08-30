@@ -42,8 +42,6 @@ class Queue {
         
         return temp
     }
-    
-
 }
 
 let ans = []
