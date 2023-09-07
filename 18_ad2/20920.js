@@ -32,7 +32,6 @@ tempMap.forEach((v,k) => {
         con1.push([v,k])
 })
 
-
 const sortFunc = (a,b) => {
         // 조건의 역순으로 비교 기준을 제시해야 함.
         
@@ -50,7 +49,6 @@ const sortFunc = (a,b) => {
         if(a[1][0] !== b[1][0]) {
                 return a[1][0] - b[1][0]
         }
- 
 }
 
 let ans = con1.sort(sortFunc).map(v => v[1])
