@@ -1,10 +1,28 @@
-let input = +require("fs").readFileSync("/dev/stdin").toString().trim()
+
+// + 그냥 복붙해서 쓰다가 + 붙인걸 안떼서 계속 틀렸다..
+let input = require("fs").readFileSync("/dev/stdin").toString().trim()
 .split("\n")
 
-// 주어진 함수를 보면
-// 문자열의 양 끝을 비교하고, 다르면 바로 탈출, 
-// 없으면 양 끝을 제외한 나머지 문자열을 매개변수로 동일 함수를 재귀 호출하고 있다.
+const recursion = (s, l, r, count) => {
+        count++
+        if(l >= r) {
+                return [1, count]
+        } else if (s[l] !== s[r]) {
+                return [0, count]
+        } else {
+                return recursion(s, l+1, r-1, count)
+        }
+}
 
-// 문자열이 팰린드롬인지, 판별을 위해 함수는 몇 번 호출되었는지를 구하면 된다.
+const isPalindrome = (s, count) => {
+        return recursion(s, 0, s.length-1, count)
+}
 
-// 근데 이거 그럼 팰린드롬인지는 나한테 구하란건가?
+let ans = ""
+
+for(let i = 1; i < input.length; i++) {
+        let [is, c] = isPalindrome(input[i], 0)    
+        ans += is + " " + c + "\n"  
+}
+
+console.log(ans)
