@@ -1,5 +1,5 @@
 
-// + 그냥 복붙해서 쓰다가 + 붙인걸 안떼서 계속 틀렸다..
+// 그냥 복붙해서 쓰다가 + 붙인걸 안떼서 계속 틀렸다..
 let input = require("fs").readFileSync("/dev/stdin").toString().trim()
 .split("\n")
 
