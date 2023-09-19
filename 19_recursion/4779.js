@@ -1,31 +1,24 @@
-// let input = require("fs")
-//         .readFileSync("/dev/stdin")
-//         .toString()
-//         .trim()
-let input = `0
-1
-                2
-                3
-                4
-                1`
+let input = require("fs")
+        .readFileSync("/dev/stdin")
+        .toString()
+        .trim()
         .split("\n")
         .map((v) => +v);
 
 //
 // a(n) = a(n-1) + e(n-1) + a(n-1)
 // a(0) = 1
-
-let ans = "";
-
 const drawLine = (n) => {
         if (n === 0) {
                 return "-";
         }
 
         const l = 3 ** n;
-        // repeat : 해당 문자열을 원하는 횟수만큼 반복
+        // .repeat(n) : 해당 문자열을 원하는 횟수만큼 반복
         return drawLine(n - 1) + " ".repeat(l / 3) + drawLine(n - 1);
 };
+
+let ans = "";
 
 for (let i = 0; i < input.length; i++) {
         ans += drawLine(input[i]) + "\n";
