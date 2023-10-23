@@ -15,6 +15,7 @@ const drawLine = (n) => {
 
         const l = 3 ** n;
         // .repeat(n) : 해당 문자열을 원하는 횟수만큼 반복
+        // 반복문으로 " "를 계속 더하는 것보다 훨씬 빠르다.
         return drawLine(n - 1) + " ".repeat(l / 3) + drawLine(n - 1);
 };
 
