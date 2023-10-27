@@ -5,9 +5,6 @@ let [n, m] = require("fs")
         .split(" ")
         .map((v) => +v);
 
-// let n = 8;
-// let m = 2;
-
 // 선택한 m개의 원소를 저장하는 배열
 let num = new Array(m).fill(null);
 
