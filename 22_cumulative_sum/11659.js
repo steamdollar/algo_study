@@ -21,11 +21,15 @@ let nums = input[1].split(" ").map((v) => +v);
 let acc = [0];
 
 let sum = 0;
+
 // 여기가 구리네..
 // 이러면 반복되는 연산이 너무 많잖아.
 for (let i = 0; i < nums.length; i++) {
-        sum += nums[i];
+        // for (let j = 0; j <= i; j++) {
+        //         sum += nums[j];
+        // }
 
+        sum += nums[i];
         acc[i + 1] = sum;
 }
 
