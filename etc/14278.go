@@ -94,7 +94,8 @@ func solution(w,h int) int {
 	}
 	
 	if w == 2 {
-		return 6 * int(math.Pow(2, float64(h))) - 2*h - 6
+		ans := 6 * int(math.Pow(2, float64(h))) - 2*h - 6
+		return 1000000007 % ans
 	}
 	
 	// solution(w,h) 값을 저장할 w * h 배열
