@@ -9,7 +9,20 @@ function solution(input) {
                 }
         }
 
-        console.log(num1);
+        let init = input;
+        while (true) {
+                init++;
+                let bin2 = init.toString(2);
+                let num2 = 0;
+                for (let i = 0; i < bin2.length; i++) {
+                        if (bin2[i] == 1) {
+                                num2++;
+                        }
+                }
+                if (num2 == num1) {
+                        return init;
+                }
+        }
 }
 
 console.log(solution(input));
