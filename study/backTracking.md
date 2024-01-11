@@ -119,7 +119,7 @@ const dfs = (k) => {
                         seq[k] = i;
                         visited[i] = true;
 
-                        //  다음 숫자를 고르는 함수 호출
+                        // 다음 숫자를 고르는 함수 호출
                         dfs(k + 1);
                         visited[i] = false;
                 }
